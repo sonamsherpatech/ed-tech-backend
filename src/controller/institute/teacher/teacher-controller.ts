@@ -66,7 +66,7 @@ class TeacherController {
     const mailInformation = {
       to: teacherEmail,
       subject: "Welcome to our Edtech platform",
-      text: `Welcome xa haii,\nEmail: ${teacherEmail}\nPassword: ${data.plainVersion}`,
+      text: `Welcome xa haii,\nEmail: ${teacherEmail}\nPassword: ${data.plainVersion}\nYour Institute Number: ${instituteNumber}`,
     };
     await SendMailServices.sendMail(mailInformation);
 

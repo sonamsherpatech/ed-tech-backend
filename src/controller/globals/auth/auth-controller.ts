@@ -28,6 +28,7 @@ import { Request, Response } from "express";
 import User from "../../../database/models/user-model";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+import GenerateJWTTokenServices from "../../../services/generate-jwt-token";
 
 class AuthController {
   static async registerUser(req: Request, res: Response) {
@@ -89,8 +90,8 @@ class AuthController {
       }
       //token generation via jsonwebtoken (jwt)
 
-      const token = jwt.sign({ id: data[0].id }, "thisissecretkey", {
-        expiresIn: "30d",
+      const token = GenerateJWTTokenServices.generateJWTToken({
+        id: data[0].id,
       });
       res.status(200).json({
         token,

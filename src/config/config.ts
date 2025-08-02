@@ -13,6 +13,7 @@ export const envConfig = {
 
   //jwt
   jwtSecretKey: process.env.JWT_SECRET_KEY,
+  jwtExpiresIn: process.env.JWT_EXPIRES_IN,
 
   //cloudinary
   cloudinaryCloudName: process.env.CLOUDINARY_CLOUD_NAME,
