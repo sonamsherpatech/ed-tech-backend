@@ -1,4 +1,5 @@
 import express from "express";
+import cors from "cors";
 const app = express();
 
 import authRoute from "./routes/globals/auth/auth-route";
@@ -10,6 +11,13 @@ import teacherInstituteRoute from "./routes/institute/teacher/teacher-route";
 import teacherRoute from "./routes/teacher/teacher-route";
 
 app.use(express.json());
+
+//CORS CONFIG
+app.use(
+  cors({
+    origin: "http://localhost:3001",
+  })
+);
 
 //AUTH ROUTE
 app.use("/api", authRoute);
