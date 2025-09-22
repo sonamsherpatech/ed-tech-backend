@@ -20,7 +20,7 @@ app.use(
 );
 
 //AUTH ROUTE
-app.use("/api", authRoute);
+app.use("/api/auth", authRoute);
 
 //INSTITUTE ROUTE
 app.use("/api/institute", instituteRoute);

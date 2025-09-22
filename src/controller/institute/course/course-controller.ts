@@ -4,7 +4,8 @@ import { IExtendedRequest } from "../../../middleware/type";
 import { QueryTypes } from "sequelize";
 
 class CourseController {
-  //Insert Course
+//Insert Course 
+
   static async createCourse(req: IExtendedRequest, res: Response) {
     const instituteNumber = req.user?.currentInstituteNumber;
 
