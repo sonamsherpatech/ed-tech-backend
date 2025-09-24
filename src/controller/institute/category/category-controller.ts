@@ -23,8 +23,23 @@ class CategoryController {
       }
     );
 
+    const [categoryData]: { id: string; createdAt: Date }[] =
+      await sequelize.query(
+        `SELECT id, createdAt from category_${instituteNumber} WHERE categoryName =?`,
+        {
+          replacements: [categoryName],
+          type: QueryTypes.SELECT,
+        }
+      );
+
     res.status(200).json({
       message: "Category Added sucessfully",
+      data: {
+        categoryName,
+        categoryDescription,
+        id: categoryData.id,
+        createdAt: categoryData.createdAt,
+      },
     });
   }
 
